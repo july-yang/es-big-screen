@@ -1,6 +1,6 @@
 <template>
 	<div :class="['es-screen-container', store.theme]">
-		<div ref="screenRef" class="es-screen">
+		<div class="es-screen">
 			<Header />
 
 			<div class="es-screen-main">
@@ -50,27 +50,25 @@ const { screenRef } = useResize()
 }
 .es-screen {
   position: absolute;
-  user-select: none;
-  top: 50%;
-  left: 50%;
-  width: var(--es-screen-width);
-  height: var(--es-screen-height);
-  margin-left: calc(var(--es-screen-width) * 0.5 - var(--es-screen-width));
-  margin-top: calc(var(--es-screen-height) * 0.5 - var(--es-screen-height));
-  background-size: 100% 100%;
-	padding: 0 20px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+//   margin-left: calc(var(--es-screen-width) * 0.5 - var(--es-screen-width));
+//   margin-top: calc(var(--es-screen-height) * 0.5 - var(--es-screen-height));
+//   background-size: 100% 100%;
 	&-main {
 		position: relative;
 		display: flex;
 		height: calc(100% - var(--es-header-height));
 	}
-	&-center {
-		flex: 1;
-		width: calc(var(--es-screen-width) - 1000px);
-	}
 	&-left, &-right {
 		width: 460px;
 	}
+}
+.es-screen-center {
+	width: 100%;
+  	height: 100vh;
 }
 .light {
 	--es-screen-bg: rgb(238, 238, 238);
